@@ -1,6 +1,6 @@
 # Cinema Guide
 
-![Cinema Guide](https://ibb.co/fvFDCZ5)
+![Cinema Guide](https://i.ibb.co/6BwX4Gx/logo.png)
 
 ## Описание
 
