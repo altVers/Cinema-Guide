@@ -1,50 +1,105 @@
-# React + TypeScript + Vite
+# Cinema Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Cinema Guide](https://ibb.co/fvFDCZ5)
 
-Currently, two official plugins are available:
+## Описание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Данный проект собран на React и TypeScript. Материалы: дизайн и сервер были предоставлены обучающей платформой Skillbox.
 
-## Expanding the ESLint configuration
+Cinema Guide — это веб-приложение, которое позволяет пользователям искать информацию о фильмах, узнавать рейтинги, просматривать трейлеры.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Функциональности
 
-- Configure the top-level `parserOptions` property like this:
+- Поиск фильмов по названию
+- Просмотр информации о фильме (жанр, режиссер, актеры, краткое описание, рейтинг)
+- Просмотр трейлеров фильмов
+- Просмотр списка фильмов по жанрам
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Технологии
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- React
+- TypeScript
+- Redux / Redux Toolkit
+- React Router DOM
+- React-hook-form
+- Zod
+- CSS / SCSS
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Установка и Запуск
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Для установки и запуска проекта на локальной машине выполните следующие шаги:
+
+1. Склонируйте репозиторий:
+```bash
+
+   git clone https://github.com/altVers/Cinema-Guide.git
+
+   ```
+2. Перейдите в директорию проекта:
+```bash
+
+   cd Cinema-Guide
+
+   ```
+3. Установите все зависимости:
+```bash
+
+   npm install
+
+   ```
+4. Запустите приложение:
+```bash
+
+   npm start
+
+   ```
+Приложение будет доступно по адресу [http://localhost:3000](http://localhost:3000).
+
+## Использование
+
+### Страницы
+
+- Главная страница
+
+После запуска приложения на главном экране вы сможете увидеть случайный фильм, а под ним топ-10 фильмов, которые были составлены по рейтингам. При нажатии на кнопку "Подробнее" в блоке с фильмом вы перейдете на страницу фильма, на которой вы сможете увидеть подробную информацию об этом фильме, а также просмотреть трейлер при нажатии на кнопку "Трейлер". При нажатии на значок обновления произойдет запрос другого случайного фильма. Авторизованный пользователь может сохранить фильм в Избранное, нажав кнопку "Сердечко", чтобы мочь вернуться в нему позже. Если пользователь не авторизован, то ему будет предложено войти в систему.
+
+- Страница фильма
+
+На этой странице будет выведена детальная информация по выбранному вами фильму. Вы сможете увидеть название фильма, жанр, режиссера, актеров, краткое описание, рейтинг, а также просмотреть его трейлер и добавить фильм в Избранное, если вы авторизованы.
+
+- Страница жанров
+
+На этой странице располагаются все жанры, которые есть в базе. При нажатии на жанр вы перейдете на страницу с фильмами данного жанра.
+
+- Страница с фильмами определенного жанра
+
+На этой странице располагаются все фильмы данного жанра. При нажатии на фильм вы перейдете на страницу фильма.
+
+- Страница профиля
+
+После прохождения регистрации\логина вам станет доступна страница профиля. На ней вы сможете просмотреть список избранных фильмов, а также удалить их из списка. Помимо этого вы можете увидеть данные вашей учетной записи, а также выйти из аккаунта.
+
+### Модальные окна и интерфейс
+
+- Модальное окно авторизации
+
+При нажатии на кнопку "Войти" в верхней части экрана появится модальное окно, в котором вы сможете ввести свои данные для входа в систему, либо зарегистрироваться, если вы еще не зарегистрированы.
+
+- Модальное окно с трейлером фильма
+
+При нажатии на кнопку "Трейлер" в блоке с фильмом появится модальное окно, в котором вы сможете просмотреть трейлер фильма. Трелер загружается напрямую из ютуба и встроен через айфрейм.
+
+- Строка поиска
+
+Также вы можете воспользоваться строкой поиска для того, чтобы найти фильм в базе и перейти на страницу фильма.
+
+
+## Вклад
+
+Это учебный проект, созданный для изучения React и TypeScript. Я буду рад любым комментариям и предложениям, чтобы улучшить свои знания.
+Если вы хотите внести свой вклад в проект, пожалуйста, создайте форк репозитория, сделайте изменения и отправьте Pull Request.
+
+
+## Контакты
+
+Если у вас есть вопросы или предложения, свяжитесь со мной в телеграмме https://t.me/timanred.
