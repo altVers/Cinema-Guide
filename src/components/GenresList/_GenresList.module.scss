@@ -1,0 +1,14 @@
+.genres-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 1439px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

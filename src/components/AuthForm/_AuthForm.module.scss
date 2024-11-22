@@ -1,0 +1,120 @@
+.submit-btn {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.auth-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 295px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 64px 40px;
+    background-color: var(--color-white);
+    opacity: 0;
+    border-radius: 24px;
+    transition: opacity var(--transition-300);
+    pointer-events: none;
+    z-index: 1000;
+
+    @media (max-width: 767px) {
+        padding: 64px 20px 32px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__title {
+        margin: 0 0 12px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        color: var(--color-black);
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 0;
+        right: -65px;
+
+        @media (max-width: 767px) {
+            right: 12px;
+            top: 12px;
+        }
+    }
+
+    &__another-form {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        color: var(--color-black);
+    }
+
+    &__logo {
+        margin-bottom: 16px;
+
+        @media (max-width: 767px) {
+            width: 180px;
+            height: 24px;
+        }
+    }
+
+    &__label {
+        position: relative;
+        min-width: 225px;
+        padding: 16px 16px 16px 52px;
+        border: 1px solid var(--color-black04);
+        border-radius: 8px;
+        color: var(--color-black);
+        cursor: pointer;
+
+        @media (max-width: 767px) {
+
+        }
+        
+        svg {
+            position: absolute;
+            top: 17px;
+            left: 16px;
+        }
+    
+        input {
+            width: 100%;
+            border: none;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            color: var(--color-black);
+            background-color: var(--color-white);
+
+            &:focus { 
+                outline: none;
+            }
+        }
+
+        &--error {
+            color: var(--color-error);
+            border-color: var(--color-error);
+        }
+    }
+    
+    
+    
+    
+}
+
+.active {
+    transition: opacity var(--transition-300);
+    opacity: 1;
+    pointer-events: all;
+}

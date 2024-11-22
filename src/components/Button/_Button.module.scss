@@ -1,0 +1,44 @@
+.btn {
+  padding: 16px 22px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 28px;
+  background-color: var(--color-purple-active);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: opacity var(--transition-300);
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn--noBg {
+  display: flex;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  background-color: transparent;
+  padding: 0;
+}
+
+.btn--secondary {
+  display: flex;
+  background-color: var(--color-gray);
+}
+
+.btn--icon {
+  display: flex;
+  background-color: var(--color-gray);
+  padding: 16px 22px;
+}
+
+.btn--close {
+  display: flex;
+  background-color: var(--color-white);
+  padding: 12px;
+}

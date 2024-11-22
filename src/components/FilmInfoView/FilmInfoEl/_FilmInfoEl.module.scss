@@ -1,0 +1,36 @@
+.film-info {
+    display: flex;
+    gap: 3px;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__field {
+        @media (max-width: 767px) {
+           font-size: 14px;
+           line-height: 20px;
+           color: var(--color-gray05);
+        }
+    }
+}
+
+.film-info__field-wrapper {
+    max-width: 300px;
+    min-width: 100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3px;
+}
+
+.film-info__buffer {
+    display: block;
+    border-bottom: 1px dotted var(--color-gray033);
+    margin-bottom: 5px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}

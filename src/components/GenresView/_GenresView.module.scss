@@ -1,0 +1,21 @@
+.genres {
+    padding: 160px 0;
+
+    @media (max-width: 767px) {
+        padding: 58px 0;
+    }
+
+    &__title {
+        margin: 0 0 64px;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 56px;
+        color: var(--color-white);
+
+        @media (max-width: 767px) {
+            margin: 0 0 40px;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+}

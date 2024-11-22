@@ -1,0 +1,65 @@
+.film__button {
+  
+  &-refresh svg {
+    transition: transform var(--transition-300);
+    &:hover {
+      transform: rotate(360deg) scale(1.1);
+    }
+  }
+
+  &-like {
+    svg {
+      transition: transform var(--transition-300), color var(--transition-300);
+    }
+    &:hover {
+      svg {
+        transform: scale(1.1);
+        color: var(--color-purple-active);
+      }
+    }
+
+    &--active {
+      background-color: var(--color-purple-active);
+      &:hover svg {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &-info {
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 28px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--color-white);
+    background-color: var(--color-gray);
+    cursor: pointer;
+    transition: opacity var(--transition-300);
+    max-width: 139px;
+    width: 100%;
+
+    @media (max-width: 720px) {
+      width: unset;
+      max-width: unset;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      color: var(--color-white);
+    }
+  }
+
+  &-trailer {
+    max-width: 171px;
+    width: 100%;
+    @media (max-width: 720px) {
+      max-width: unset;
+      grid-column: 1 / 4;
+    }
+  }
+}

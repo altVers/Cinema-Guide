@@ -1,0 +1,40 @@
+.favorites {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 64px 40px;
+
+        @media (max-width: 1439px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 767px) {
+            flex-wrap: nowrap;
+        }
+
+        li {
+            position: relative;
+
+            &:hover {
+                .favorites__button-close {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+    }
+
+    &__button-close {
+        position: absolute;
+        top: -25px;
+        right: -25px;
+        opacity: 0;
+        pointer-events: none;
+
+        @media (max-width: 767px) {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
