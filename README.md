@@ -1,5 +1,3 @@
-# Cinema Guide
-
 ![Cinema Guide](https://i.ibb.co/6BwX4Gx/logo.png)
 
 ## Описание
