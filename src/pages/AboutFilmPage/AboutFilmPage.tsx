@@ -1,16 +1,20 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { FilmView } from "../../components/FilmView/FilmView";
 import { useParams } from "react-router-dom";
 import { useMovieByIdQuery } from "../../hooks/useMovieByIdQuery";
 import { FilmInfoView } from "../../components/FilmInfoView/FilmInfoView";
 import { Container } from "../../components/Container/Container";
 import { Loader } from "../../components/Loader/Loader";
+import { queryClient } from "../../main";
 
 export const AboutFilmPage: FC = () => {
-  const params = useParams();
-  const current = params.movieId
-  const { data, isLoading, error } = useMovieByIdQuery(Number(current));
-  
+  const { movieId } = useParams();
+  const { data, isLoading, error } = useMovieByIdQuery(Number(movieId));
+
+  useEffect(() => {
+    queryClient.invalidateQueries({queryKey: ["film-by-id"]});
+  }, [movieId]);
+
   if (isLoading) {
     return <Loader />;
   }
@@ -32,8 +36,10 @@ export const AboutFilmPage: FC = () => {
     );
   }
 
-  return <>
-    <FilmView data={data} type="about"/>
-    <FilmInfoView data={data}/>
-  </>;
+  return (
+    <>
+      <FilmView data={data} type="about" />
+      <FilmInfoView data={data} />
+    </>
+  );
 };

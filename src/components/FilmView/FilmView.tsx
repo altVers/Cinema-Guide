@@ -21,7 +21,6 @@ export const FilmView: FC<Props> = ({ data, refetch, type = "main" }) => {
   const [state, setState] = useState<boolean>(false);
 
   const handleModalChange = () => {
-    
     setState(!state);
   };
 

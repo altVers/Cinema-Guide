@@ -14,6 +14,7 @@ type Props = {
 };
 
 export const FilmCardSearch: FC<Props> = ({ film }) => {
+
   return (
     <Link onClick={handleScrollTop} to={`/movie/${film.id}`}>
       <div className={styles["film-search"]}>

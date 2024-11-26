@@ -33,7 +33,7 @@ export const SearchInput: FC<Props> = ({
   }
 
   /*
-  Функция для поиска фильмов по названию. Срабат при изменении значения input 
+  Функция для поиска фильмов по названию. Срабатывает при изменении значения input 
   и записывает фильмы в state и добавляет квери параметр в url
   */
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
