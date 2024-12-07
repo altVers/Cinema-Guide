@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { Container } from "../../components/Container/Container";
 import { FilmView } from "../../components/FilmView/FilmView";
 import { Loader } from "../../components/Loader/Loader";
@@ -6,6 +7,7 @@ import { useRandomFilmQuery } from "../../hooks/useRandomFilmQuery";
 
 export const MainPage = () => {
   const { data, error, isLoading, refetch } = useRandomFilmQuery();
+  const memoTopFilmView = useCallback(() => <TopFilmView />, [])
 
   if (isLoading) {
     return <Loader />;
@@ -39,7 +41,7 @@ export const MainPage = () => {
   return (
     <>
       <FilmView data={data} refetch={refetch} type="main"/>
-      <TopFilmView />
+      {memoTopFilmView()}
     </>
   );
 };

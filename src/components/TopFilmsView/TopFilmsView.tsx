@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { useTopTenQuery } from "../../hooks/useTopTenQuery";
 import { FilmCard } from "../FilmCard/FilmCard";
 import { Container } from "../Container/Container";
 import { Loader } from "../Loader/Loader";
 import styles from './_TopFilmsView.module.scss'
 
-export const TopFilmView: FC = () => {
+export const TopFilmView: FC = memo(() => {
   const { data, isLoading, error } = useTopTenQuery();
 
   if (isLoading) {
@@ -45,4 +45,4 @@ export const TopFilmView: FC = () => {
       </Container>
     </div>
   );
-};
+});

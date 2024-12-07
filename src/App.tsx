@@ -6,12 +6,14 @@ import { AboutFilmPage } from "./pages/AboutFilmPage/AboutFilmPage";
 import { GenresPage } from "./pages/GenresPage/GenresPage";
 import { GenreFilmsPage } from "./pages/GenreFilmsPage/GenreFilmsPage";
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
+import { useCallback } from "react";
 
 function App() {
+  const memoHeader = useCallback(() => <Header />, [])
   return (
     <>
       <BrowserRouter>
-        <Header />
+        {memoHeader()}
         <main>
           <Routes>
             <Route path="/" element={<MainPage />} />

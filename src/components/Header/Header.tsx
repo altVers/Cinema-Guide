@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo, useCallback } from "react";
 import { SearchInput } from "../SearchInput/SearchInput";
 import { Button } from "../Button/Button";
 import styles from "./_Header.module.scss";
@@ -13,11 +13,13 @@ import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { showAuthForm } from "../../states/slices/authFormSlice";
 import { Icon } from "../Icon/Icon";
 
-export const Header: FC = () => {
+export const Header: FC = memo(() => {
   const dispatch = useAppDispatch();
   const isUserAuthorized = useAppSelector((state) => state.profile.authorized);
   const isAuthOpen = useAppSelector((state) => state.authForm.isShown);
   const { data } = useFetchMeQuery();
+
+  const memoAuthForm = useCallback(() => <AuthForm />, [])
 
   return (
     <header
@@ -117,7 +119,7 @@ export const Header: FC = () => {
           )}
         </div>
       </Container>
-      <AuthForm />
+      {memoAuthForm()}
     </header>
   );
-};
+});

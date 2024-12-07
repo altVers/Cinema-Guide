@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { LoginForm } from "./LoginForm/LoginForm";
 import { RegisterForm } from "./RegisterForm/RegisterForm";
 import { Logo } from "../Logo/Logo";
@@ -12,7 +12,7 @@ import {
   showAuthForm,
 } from "../../states/slices/authFormSlice";
 
-export const AuthForm: FC = () => {
+export const AuthForm: FC = memo(() => {
   const isShown = useAppSelector((state) => state.authForm.isShown);
   const isRegistration = useAppSelector(
     (state) => state.authForm.isRegistration
@@ -51,4 +51,4 @@ export const AuthForm: FC = () => {
       </Button>
     </div>
   );
-};
+});

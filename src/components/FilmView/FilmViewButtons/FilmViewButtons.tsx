@@ -2,11 +2,7 @@ import { FC, useState } from "react";
 import { Button } from "../../Button/Button";
 import { Icon } from "../../Icon/Icon";
 import styles from "./_FilmViewButtons.module.scss";
-import {
-  QueryObserverResult,
-  useMutation,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { QueryObserverResult, useMutation } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { fetchAddToFavorite } from "../../../api/fetchAddToFavorite";
 import { useFetchMeQuery } from "../../../hooks/fetchMeQuery";
@@ -29,7 +25,6 @@ export const FilmViewButtons: FC<Props> = ({
   refetchPage,
   id,
 }) => {
-  const client = useQueryClient();
   const dispatch = useAppDispatch();
 
   const { data, refetch } = useFetchMeQuery();
@@ -38,35 +33,34 @@ export const FilmViewButtons: FC<Props> = ({
   const mutateFavorite = useMutation({
     mutationFn: (id: string) => fetchAddToFavorite(id),
     onSuccess: () => {
-      client.invalidateQueries({ queryKey: ["favorites"] });
+      queryClient.invalidateQueries({ queryKey: ["favorites"] });
       setLike(true);
     },
   });
 
   const handleRefetch = () => {
     refetchPage?.();
-    client.invalidateQueries({ queryKey: ["profile"] });
+    queryClient.invalidateQueries({ queryKey: ["profile"] });
     refetch?.();
-    setLike(data?.favorites?.includes(id.toString()))
+    setLike(data?.favorites?.includes(id.toString()));
   };
 
-  const mutation = useDeleteMovieMutation()
+  const mutation = useDeleteMovieMutation();
   const handleMovieDelete = (id: number) => {
     mutation.mutate(id, {
       onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: ["favorites"] })
+        queryClient.invalidateQueries({ queryKey: ["favorites"] });
         setLike(false);
-        refetch()
-      }
-    }) 
-  }
+        refetch();
+      },
+    });
+  };
 
   const handleAddToFavorite = () => {
     if (data && !like) {
       mutateFavorite.mutate(id.toString());
     } else if (data && like) {
-      handleMovieDelete(id)
-      
+      handleMovieDelete(id);
     } else {
       dispatch(showAuthForm());
     }
@@ -75,7 +69,11 @@ export const FilmViewButtons: FC<Props> = ({
   if (type === "main") {
     return (
       <>
-        <Button anyStyle={styles["film__button-trailer"]} type="button" onClick={handleModalChange}>
+        <Button
+          anyStyle={styles["film__button-trailer"]}
+          type="button"
+          onClick={handleModalChange}
+        >
           <span>Трейлер</span>
         </Button>
         <Link className={styles["film__button-info"]} to={`/movie/${id}`}>
