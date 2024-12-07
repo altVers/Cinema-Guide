@@ -94,4 +94,22 @@
     right: 12px;
     top: 12px;
   }
+
+  &__mobile-icon {
+    display: none;
+    transition: transform var(--transition-300);
+    button {
+      svg {
+        color: #ffffff;
+      }
+    }
+    @media (max-width: 1024px) {
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }

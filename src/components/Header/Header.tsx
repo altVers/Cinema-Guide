@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { SearchInput } from "../SearchInput/SearchInput";
 import { Button } from "../Button/Button";
 import styles from "./_Header.module.scss";
@@ -15,14 +15,9 @@ import { Icon } from "../Icon/Icon";
 
 export const Header: FC = () => {
   const dispatch = useAppDispatch();
-  const [search, setSearch] = useState<boolean>(false);
   const isUserAuthorized = useAppSelector((state) => state.profile.authorized);
   const isAuthOpen = useAppSelector((state) => state.authForm.isShown);
   const { data } = useFetchMeQuery();
-
-  const toggleSearchShown = () => {
-    setSearch(!search);
-  };
 
   return (
     <header
@@ -75,14 +70,7 @@ export const Header: FC = () => {
                 </NavLink>
               </li>
               <li>
-                <Button type="button" style="noBg" onClick={toggleSearchShown} anyStyle={styles.header__nav_search_icon}>
-                  <Icon id="search" width="24" height="24" />
-                </Button>
-                <SearchInput
-                  className={styles.header__nav_input}
-                  toggleSearchShown={toggleSearchShown}
-                  searchShown={search}
-                />
+                <SearchInput className={styles.header__nav_input} />
               </li>
             </ul>
           </nav>
