@@ -1,3 +1,3 @@
-export const parseRating = (rating: number):string => {
+export const parseRating = (rating: number = 0):string => {
     return rating.toFixed(1)
 }

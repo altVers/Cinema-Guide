@@ -25,7 +25,7 @@
     "scripts",
     "acceptance-tests",
     "webpack",
-    "jest",
+    "jest.config.cjs",
     "src/setupTests.ts"
   ],
   "types": [

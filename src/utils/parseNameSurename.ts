@@ -1,3 +1,7 @@
 export const parseNameSurename = (name: string, surname: string) => {
-    return `${name[0]}${surname[0]}`;
+    if(name === '' && surname !== "") return `${surname[0].toLocaleUpperCase()}`
+    if(name !== '' && surname === "") return `${name[0].toLocaleUpperCase()}`
+    if(name === '' && surname === "") return `?`
+    
+    return `${name[0].toLocaleUpperCase()}${surname[0].toLocaleUpperCase()}`;
 }
