@@ -16,14 +16,14 @@ function App() {
         {memoHeader()}
         <main>
           <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/movie/:movieId" element={<AboutFilmPage />} />
-            <Route path="/movie/genres/" element={<GenresPage />} />
+            <Route path="/Cinema-Guide" element={<MainPage />} />
+            <Route path="/Cinema-Guide/movie/:movieId" element={<AboutFilmPage />} />
+            <Route path="/Cinema-Guide/movie/genres/" element={<GenresPage />} />
             <Route
-              path="/movie/genres/:movieGenre"
+              path="/Cinema-Guide/movie/genres/:movieGenre"
               element={<GenreFilmsPage />}
             />
-            <Route path="/profile/" element={<ProfilePage />} />
+            <Route path="/Cinema-Guide/profile/" element={<ProfilePage />} />
           </Routes>
         </main>
         <Footer />

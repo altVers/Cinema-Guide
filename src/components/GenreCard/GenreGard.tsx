@@ -10,7 +10,7 @@ type Props = {
 
 export const GenreCard: FC<Props> = ({ imgSrc, genre }) => {
   return (
-    <Link onClick={handleScrollTop} to={`/movie/genres/${genre}`}>
+    <Link onClick={handleScrollTop} to={`/Cinema-Guide/movie/genres/${genre}`}>
       <div className={styles["genre-card"]}>
         <img
           src={imgSrc}

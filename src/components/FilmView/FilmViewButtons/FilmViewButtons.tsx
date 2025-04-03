@@ -76,7 +76,7 @@ export const FilmViewButtons: FC<Props> = ({
         >
           <span>Трейлер</span>
         </Button>
-        <Link className={styles["film__button-info"]} to={`/movie/${id}`}>
+        <Link className={styles["film__button-info"]} to={`/Cinema-Guide/movie/${id}`}>
           О фильме
         </Link>
         <Button

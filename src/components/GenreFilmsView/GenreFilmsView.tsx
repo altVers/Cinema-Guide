@@ -50,7 +50,7 @@ export const GenreFilmsView: FC<Props> = ({ genre, data }) => {
       <div className={styles["genre-films"]}>
         <Container>
           <h2 className={styles["genre-films__title"]}>
-            <Link className={styles["genre-films__link"]} to={"/movie/genres/"}>
+            <Link className={styles["genre-films__link"]} to={"/Cinema-Guide/movie/genres/"}>
               <Icon id="back-arrow" width="40" height="40" />
               {genre}
             </Link>

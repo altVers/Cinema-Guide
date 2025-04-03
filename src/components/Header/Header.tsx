@@ -40,7 +40,7 @@ export const Header: FC = memo(() => {
                 <Link
                   onClick={handleScrollTop}
                   className={styles.header__nav_link}
-                  to={"/movie/genres/"}
+                  to={"/Cinema-Guide/movie/genres/"}
                 >
                   <Icon id="genres" width="24" height="24" />
                 </Link>
@@ -53,7 +53,7 @@ export const Header: FC = memo(() => {
                       ? classNames(styles.header__nav_link, styles.active)
                       : styles.header__nav_link
                   }
-                  to={"/"}
+                  to={"/Cinema-Guide"}
                 >
                   Главная
                 </NavLink>
@@ -66,7 +66,7 @@ export const Header: FC = memo(() => {
                       ? classNames(styles.header__nav_link, styles.active)
                       : styles.header__nav_link
                   }
-                  to={"/movie/genres/"}
+                  to={"/Cinema-Guide/movie/genres/"}
                 >
                   Жанры
                 </NavLink>
@@ -78,11 +78,11 @@ export const Header: FC = memo(() => {
           </nav>
           {isUserAuthorized && data ? (
             <>
-              <Link to={"/profile"} className={styles["header__profile-icon"]}>
+              <Link to={"/Cinema-Guide/profile"} className={styles["header__profile-icon"]}>
                 <Icon id="user" width="24" height="24" />
               </Link>
               <NavLink
-                to={"/profile"}
+                to={"/Cinema-Guide/profile"}
                 className={({ isActive }) =>
                   isActive
                     ? classNames(

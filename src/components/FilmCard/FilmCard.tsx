@@ -20,7 +20,7 @@ export const FilmCard: FC<Props> = ({ film, anyStyles }) => {
         anyStyles ? cn(styles["film-card"], anyStyles) : styles["film-card"]
       }
     >
-      <Link onClick={handleScrollTop} to={`/movie/${film.id}`}>
+      <Link onClick={handleScrollTop} to={`/Cinema-Guide/movie/${film.id}`}>
         <img
           src={film.posterUrl || filmDefaultBg}
           alt={film.title}
