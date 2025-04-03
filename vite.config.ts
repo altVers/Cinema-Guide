@@ -10,5 +10,10 @@ export default defineConfig({
         api: 'modern-compiler'
       }
     }
+  },
+  base: "/Cinema-Guide/",
+  build: {
+    outDir: "dist",
+    sourcemap: true
   }
 })
