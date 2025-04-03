@@ -31,7 +31,7 @@ export const Header: FC = memo(() => {
     >
       <Container>
         <div className={styles.header__wrapper}>
-          <a className={styles.header__logo} href={"/"}>
+          <a className={styles.header__logo} href={"/Cinema-Guide"}>
             <Logo className={styles.header__logo_svg} />
           </a>
           <nav className={styles.header__nav}>
